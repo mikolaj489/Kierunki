@@ -1,0 +1,131 @@
+body {
+    font-family: 'Segoe UI', 'Liberation Sans', Arial, sans-serif;
+    background: #0d1117;
+    color: #c9d1d9;
+    min-height: 100vh;
+    margin: 0;
+}
+
+main {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 32px 20px;
+    background: #161b22;
+    border-radius: 16px;
+    box-shadow: 0 4px 32px rgba(1,4,9,0.4);
+}
+
+header {
+    text-align: center;
+    border-bottom: 1.5px solid #23272e;
+    padding-bottom: 28px;
+    margin-bottom: 36px;
+}
+
+header h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #f0f6fc;
+    letter-spacing: -1.5px;
+    margin-bottom: 8px;
+}
+
+header h3 {
+    font-size: 1.3rem;
+    color: #58a6ff;
+    font-weight: 500;
+    margin-top: 0;
+}
+
+section {
+    margin-bottom: 48px;
+    padding-bottom: 24px;
+    border-bottom: 1.5px solid #23272e;
+}
+
+section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+h2 {
+    color: #79c0ff;
+    font-size: 1.5rem;
+    margin-bottom: 18px;
+    font-weight: 700;
+}
+
+.exam-boxes {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+}
+
+.exam-box {
+    background: linear-gradient(135deg, #232a36 60%, #161b22 100%);
+    border-radius: 14px;
+    padding: 22px 18px;
+    color: #c9d1d9;
+    min-width: 220px;
+    flex: 1 1 220px;
+    box-shadow: 0 4px 24px rgba(88,166,255,0.10), 0 1.5px 8px rgba(1,4,9,0.13);
+    border: 1.5px solid #30363d;
+    transition: box-shadow 0.2s, border-color 0.2s, transform 0.13s;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.exam-box h3 {
+    color: #58a6ff;
+    margin-bottom: 8px;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.exam-box:hover, .exam-box:focus-visible {
+    box-shadow: 0 8px 32px #58a6ff33, 0 2px 12px #1a2230;
+    border-color: #58a6ff;
+    transform: translateY(-3px) scale(1.03);
+}
+
+.job-opportunity {
+    background: linear-gradient(120deg, #232a36 60%, #161b22 100%);
+    border-radius: 14px;
+    padding: 20px 16px;
+    color: #c9d1d9;
+    font-size: 1.08rem;
+    font-weight: 500;
+    box-shadow: 0 4px 24px rgba(88,166,255,0.10), 0 1.5px 8px rgba(1,4,9,0.13);
+    border: 1.5px solid #30363d;
+    transition: box-shadow 0.2s, border-color 0.2s, transform 0.13s;
+    margin-bottom: 18px;
+}
+
+.job-opportunity h3 {
+    color: #58a6ff;
+    margin-bottom: 6px;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.job-opportunity:hover, .job-opportunity:focus-visible {
+    box-shadow: 0 8px 32px #58a6ff33, 0 2px 12px #1a2230;
+    border-color: #58a6ff;
+    transform: translateY(-2px) scale(1.02);
+}
+
+@media (max-width: 700px) {
+    main {
+        padding: 12px 2vw;
+    }
+    .exam-boxes {
+        flex-direction: column;
+        gap: 12px;
+    }
+    .exam-box {
+        min-width: 0;
+        padding: 14px 8px;
+    }
+}
