@@ -10,12 +10,13 @@ body {
     background: #0d1117;
     color: #c9d1d9;
     min-height: 100vh;
+    padding: 25px;
 }
 
 main {
-    max-width: 700px;
-    margin: 40px auto;
-    padding: 32px 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
     background: #161b22;
     border-radius: 16px;
     box-shadow: 0 4px 32px rgba(1,4,9,0.4);
