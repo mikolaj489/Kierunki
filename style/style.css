@@ -10,14 +10,14 @@ body {
      font-family: "Ubuntu Mono", monospace;
      font-weight: 400;
      font-style: normal;
-    background: hsl(216, 27.78%, 22%);
+    background: hsl(235, 18.75%, 12.55%);
     color: #c9d1d9;
     min-height: 100vh;
     padding: 25px;
 }
 
 .initial-animation {
-    background: hsl(235, 16%, 16%);
+    background: hsl(235, 18.75%, 12.55%);
     top: 0;
     left: 0;
     margin: 0;
@@ -33,7 +33,7 @@ body {
     justify-content: center;
     box-sizing: border-box;
     z-index: 1000;
-    box-shadow: 0 0 10px 10px hsl(235, 16%, 16%);;
+    box-shadow: 0 0 10px 10px hsl(235, 16%, 16%);
 
 }
 @keyframes scrollAnimation {
@@ -105,7 +105,6 @@ body {
     font-size: 4rem;
     letter-spacing: 10px;
     text-align: center;
-    font-family: "Cinzel", serif;
     font-weight: 400;
     font-style: normal;
     font-weight: 300;
@@ -118,18 +117,23 @@ body {
 @keyframes showSubText {
     0% {
         top:-200%;
-
+        opacity: 0;
+    }
+    50% {
+        top: -150%;
+        opacity: 0;
     }
     100% {
         top:30px;
+        opacity: 1;
     }
 }
 .cover {
-    background: hsl(235, 16%, 16%);
+    background: hsl(235, 18.75%, 12.55%);
     position: absolute;
     height: 145px;
     width: 1000px;
-    box-shadow: 0 20px 40px hsl(235, 16%, 16%);
+    box-shadow: 0 20px 40px hsl(235, 18.75%, 12.55%);
 }
 .arrow-container {
     position: absolute;
