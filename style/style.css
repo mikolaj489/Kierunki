@@ -5,19 +5,23 @@
     margin: 0;
     padding: 0;
 }
-
+:root {
+    --bg-color: hsl(235, 18.75%, 12.55%);
+    --secondary-bg-color: hsl(231.43, 13.21%, 10.39%);
+    --text-color: hsl(210, 17.39%, 81.96%);
+}
 body {
      font-family: "Ubuntu Mono", monospace;
      font-weight: 400;
      font-style: normal;
-    background: hsl(235, 18.75%, 12.55%);
-    color: #c9d1d9;
+    background: var(--bg-color);
+    color: var(--text-color);
     min-height: 100vh;
     padding: 25px;
 }
 
 .initial-animation {
-    background: hsl(235, 18.75%, 12.55%);
+    background: var(--bg-color);;
     top: 0;
     left: 0;
     margin: 0;
