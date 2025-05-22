@@ -142,5 +142,31 @@ function hideInitialPanelOnScroll() {
     }
 }
 
+const cursorCircle = document.createElement('div');
+cursorCircle.className = 'cursor-circle';
+cursorCircle.style.display = 'none';
+document.body.appendChild(cursorCircle);
+
+document.addEventListener('mousemove', (e) => {
+    if (cursorCircle.style.display === 'block') {
+        cursorCircle.style.left = `${e.clientX}px`;
+        cursorCircle.style.top = `${e.clientY}px`;
+    }
+});
+
+document.querySelectorAll('.choice-container').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+        cursorCircle.style.display = 'block';
+    });
+    el.addEventListener('mouseleave', () => {
+        cursorCircle.style.display = 'none';
+    });
+    el.addEventListener('mousemove', e => {
+        const rect = el.getBoundingClientRect();
+        el.style.setProperty('--x', `${e.clientX - rect.left}px`);
+        el.style.setProperty('--y', `${e.clientY - rect.top}px`);
+    });
+});
+
 
 

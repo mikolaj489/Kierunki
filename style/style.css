@@ -8,7 +8,9 @@
 :root {
     --bg-color: #1A1B26;
     --secondary-bg-color: #17181E;
+    --another-bg-color: #161B22;
     --text-color: hsl(210, 17.39%, 81.96%);
+    --scondary-text-color: #58A6FF;
     --stroke-color: #414141;
     --shadow-color: rgba(1, 4, 9, .4);
     --radius: 18px;
@@ -27,7 +29,7 @@ section {
     max-width: 1300px;
     width: 100%;
     margin: 0 auto;
-    padding-bottom: 109px;
+    margin-bottom: 109px;
 }
 main {
     max-width: 1300px;
@@ -48,6 +50,10 @@ h2 {
 h5 {
     font-size: 1.44rem;
     text-align: center;
+}
+a {
+    color: var(--text-color);
+    text-decoration: none;
 }
 .small {
     font-size: 0.833rem;
@@ -153,6 +159,8 @@ header span {
 .two-boxes {
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 .two-boxes div {
     background: linear-gradient(118deg, rgba(35, 42, 54, .6) 0%, rgba(22, 27, 34, 1) 100%);
@@ -164,6 +172,140 @@ header span {
 }
 .two-boxes p {
     padding-top: 30px;
+}
+.tree-boxes span {
+    opacity: .51;
+}
+.tree-boxes h5 {
+    text-align: left;
+    color: var(--scondary-text-color);
+}
+.tree-boxes > div {
+    display: flex;
+    justify-content: center;
+}
+.tree-boxes > div > div {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    justify-content: center;
+    max-width: 800px;
+}
+.tree-boxes > div > div div {
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    padding: 20px;
+    border-radius: var(--radius);
+    background-color: var(--another-bg-color);
+    border: 1px solid rgba(51, 34, 119, .18);
+    box-shadow: 0 4px 32px 0 var(--shadow-color);
+}
+.quote {
+    display: flex;
+    justify-content: center;
+}
+.quote > div {
+    padding: 35px;
+    background-color: #21262D;
+    border-radius: var(--radius);
+    border-left: 5px solid var(--scondary-text-color);
+    box-shadow: 0 4px 32px 0 var(--shadow-color);
+}
+.quote p {
+    max-width: 500px;
+    font-style: italic;
+    line-height: 20px;
+    opacity: .6;
+}
+.choice > div::after,
+.choice > div::before {
+    content: '';
+    width: 540px;
+    height: 1px;
+    position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
+    background-color: var(--stroke-color);
+}
+.choice > div::after {
+    bottom: -50px;
+}
+.choice > div::before {
+    top: -50px;
+}
+.choice > div {   
+    display: flex;
+     gap: 5px;
+    position: relative;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    flex-direction: row;
+    padding: 10px;
+}
+.vs {
+    font-size: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.choice-container {
+    padding: 100px;
+    height: 100%;;
+    border-radius: 50px;
+    text-align: center;
+    transition: shadow .3s;
+   box-shadow: inset 0 4px 52px 30px rgba(51, 51, 51, 0.457);
+    overflow: hidden;
+    position: relative;
+    border: 10px solid var(--shadow-color);
+}
+.choice-container img {
+    position: absolute;
+    top: 0;
+    width: 600px;
+    left: 0;
+    z-index: -1;
+    opacity: .6;
+}
+.choice-container::before {
+    content: '';
+    position: absolute;
+    left: var(--x, 20%);
+    top: var(--y, 20%);
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    border-radius: 50%;
+    background: radial-gradient(circle, #ffffff4f 0%, transparent 100%);
+    transform: translate(-50%, -50%) scale(0.2);
+    opacity: 0;
+    transition: width 0.4s, height 0.4s, opacity 0.4s, transform 0.4s;
+    z-index: 1;
+}
+.choice-container:hover::before {
+    width: 400px;
+    height: 400px;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.choice-container span {
+    font-size: 2rem;
+    background-color: rgba(0, 0, 0, 0.568);
+    padding: 15px;
+    border-radius: var(--radius);
+}
+.choice-container p {
+    transition: letter-spacing 0.3s, font-weight 0.3s;
+}
+.choice-container span {
+    transition: .3s;
+} 
+.choice-container:hover span {
+    transition: .3s;
+    letter-spacing: .1em;
+    font-weight: 600;
 }
 /* Typing animation */
 @keyframes blinkCursor {
@@ -413,13 +555,15 @@ header span {
     align-items: center;
     gap: 5px;
 }
-.initial-panel-button:hover {
+.initial-panel-button:hover,
+.choice-container:hover {
     transform: scale(1.05);
     transition: .3s;
     cursor: pointer;
     box-shadow: 2px 2px 5px 5px rgba(75, 91, 122, 0.208);
 }
-.initial-panel-button:active {
+.initial-panel-button:active,
+.choice-container:active {
     transform: scale(0.8);
 }
 .anim-button {
@@ -445,3 +589,9 @@ header span {
     border: 2px solid hsl(0, 73%, 34%);
 }
 /* Inital animation */
+
+@media (max-width: 800px) {
+    .choice > div {
+        flex-direction: column;
+    }
+}
