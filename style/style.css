@@ -136,11 +136,15 @@ header span {
 .badges > div {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 .badges-container {
     display: flex;
     gap: 78px;
+    justify-content: center;
     padding-top: 50px;
+     flex-wrap: wrap;
+    
 }
 .badges-container div {
     padding: 20px;
@@ -306,6 +310,64 @@ header span {
     transition: .3s;
     letter-spacing: .1em;
     font-weight: 600;
+}
+.projects > div {
+    padding: 50px;
+}
+.projects-container {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+.projects-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding: 0 30px;
+
+}
+.projects-container img {
+    width: 200px;
+}
+.projects-content > div {
+    padding: 30px;
+    width: 100%;
+    max-width: 307px;
+    background-color: var(--bg-color);
+    border: 1px solid var(--stroke-color);
+    border-radius: 50px;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    align-items: center;
+    box-shadow: 0px 4px 32px 0px  rgba(1, 4, 9, .4);
+    display: flex;
+    font-size: 19.2px;
+
+}
+.img-container {
+    width: 107px;
+    height: 60px;
+    overflow: hidden;
+}
+.img-container.salon-gier {
+    background-image: url('../img/min/salon_gier.png');
+}
+.img-container.gra-mikolajkowa {
+    background-image: url('../img/min/gra_mikolajkowa.png');
+}
+.img-container.gra-dydaktyczna {
+    background-image: url('../img/min/gra_dydaktyczna.png');
+}
+.img-container.platforma {
+    background-image: url('../img/min/platforma.png');
+}
+.img-container.f-geometryczne {
+    background-image: url('../img/min/f_geometryczne.png');
 }
 /* Typing animation */
 @keyframes blinkCursor {
@@ -589,6 +651,34 @@ header span {
     border: 2px solid hsl(0, 73%, 34%);
 }
 /* Inital animation */
+/* rating */
+.rating {
+  display: inline-block;
+}
+
+.rating input {
+  display: none;
+}
+
+.rating label {
+  float: right;
+  cursor: pointer;
+  color: #ccc;
+  transition: color 0.3s;
+}
+
+.rating label:before {
+  content: '\2605';
+  font-size: 30px;
+}
+
+.rating input:checked ~ label,
+.rating label:hover,
+.rating label:hover ~ label {
+  color: #6f00ff;
+  transition: color 0.3s;
+}
+/* rating*/
 
 @media (max-width: 800px) {
     .choice > div {
