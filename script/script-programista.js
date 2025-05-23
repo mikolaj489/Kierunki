@@ -1,25 +1,25 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // delklaracja zmiennych
     const inf03Box = document.querySelectorAll('.exam-box')[0];
     const inf04Box = document.querySelectorAll('.exam-box')[1];
     const inf03Details = document.getElementById('inf03-details');
     const inf04Details = document.getElementById('inf04-details');
 
-    inf03Box.style.cursor = 'pointer';
-    inf04Box.style.cursor = 'pointer';
 
+//Funkcja pokazuje jeden szczegół i ukrywa drugi.
     function showDetails(detailsToShow, detailsToHide, boxToShow, boxToHide) {
         detailsToHide.classList.remove('show');
         boxToHide.classList.remove('active');
         setTimeout(() => {
-            // detailsToHide.style.display = 'none'; // Remove immediate display none to allow max-height transition
             detailsToShow.style.display = 'block';
             boxToShow.classList.add('active');
             setTimeout(() => {
                 detailsToShow.classList.add('show');
             }, 10);
-        }, 1000); // Wait for hide animation to finish before showing
-    }
+        }, 1000); 
+    }   
 
+    //dodaje obsługę kliknięcia na element inf03Box, która pokazuje lub ukrywa szczegóły inf03Details z animacją, a jeśli inf04Details jest już widoczny, to zamiast tego przełącza widoczność między nimi za pomocą funkcji showDetails
     inf03Box.addEventListener('click', function() {
         if (!inf03Details.classList.contains('show')) {
             if (inf04Details.classList.contains('show')) {
@@ -32,7 +32,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 }, 10);
             }
         } else {
-            // Hide inf03Details if already shown
             inf03Details.classList.remove('show');
             inf03Box.classList.remove('active');
             setTimeout(() => {
@@ -40,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 1000);
         }
     });
-
+//vice versa
     inf04Box.addEventListener('click', function() {
         if (!inf04Details.classList.contains('show')) {
             if (inf03Details.classList.contains('show')) {
@@ -53,7 +52,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 }, 10);
             }
         } else {
-            // Hide inf04Details if already shown
             inf04Details.classList.remove('show');
             inf04Box.classList.remove('active');
             setTimeout(() => {

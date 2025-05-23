@@ -91,6 +91,7 @@ h2 {
     transition: box-shadow 0.2s, border-color 0.2s, transform 0.13s;
     margin-bottom: 10px;
     text-align: center;
+    cursor: pointer;
 }
 
 .exam-box h3 {
