@@ -142,5 +142,46 @@ function hideInitialPanelOnScroll() {
     }
 }
 
+const links = document.querySelectorAll('.projects-content > div');
 
 
+const projectUrls = [
+    "https://mikolaj489.github.io/SalonGier.github.io/",
+    "https://mikolaj489.github.io/Gra-Mikolajkowa.github.io/",
+    "https://mikolaj489.github.io/GraDydaktyczna.github.io/",
+    "https://mikolaj489.github.io/platforma.github.com/",
+    "https://mikolaj489.github.io/Obliczenia-Geometryczne.github.io/"
+];
+
+links.forEach((div, i) => {
+    div.style.cursor = "pointer";
+    div.addEventListener('click', () => {
+        if (projectUrls[i]) {
+            window.open(projectUrls[i], '_blank');
+        }
+    });
+});
+document.querySelectorAll('.rating').forEach(rating => {
+    rating.addEventListener('click', e => {
+        e.stopPropagation();
+    });
+});
+
+const animateText = document.querySelectorAll('.text');
+
+
+setTimeout(() => {
+    animateText[0].style.display = 'block';
+    animateText[1].style.display = 'none';
+    animateText[2].style.display = 'none';
+}, 0);
+setTimeout(() => {
+    animateText[0].style.display = 'none';
+    animateText[1].style.display = 'block';
+    animateText[2].style.display = 'none';
+}, 13000);
+setTimeout(() => {
+    animateText[0].style.display = 'none';
+    animateText[1].style.display = 'none';
+    animateText[2].style.display = 'block';
+}, 130000);
