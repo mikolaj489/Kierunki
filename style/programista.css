@@ -1,5 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 body {
-    font-family: 'Segoe UI', 'Liberation Sans', Arial, sans-serif;
+    font-family: "Ubuntu Mono", monospace;
     background: #0d1117;
     color: #c9d1d9;
     min-height: 100vh;
@@ -21,6 +22,9 @@ header {
     padding-bottom: 28px;
     margin-bottom: 36px;
 }
+.what-about{
+    text-align: justify;
+}
 
 header h1 {
     font-size: 2.8rem;
@@ -28,6 +32,7 @@ header h1 {
     color: #f0f6fc;
     letter-spacing: -1.5px;
     margin-bottom: 8px;
+    margin-top:0;
 }
 
 header h3 {
@@ -54,6 +59,17 @@ h2 {
     font-size: 1.5rem;
     margin-bottom: 18px;
     font-weight: 700;
+}
+.detail-box{
+    padding-top: 10px;
+}
+.line{
+    width: 90%;
+    height: 1px;
+    background-color:#58a6ff4d;
+    display:block;
+    margin: 0 auto;
+    margin-top: 34px;
 }
 
 .exam-boxes {
@@ -84,7 +100,7 @@ h2 {
     font-weight: 700;
 }
 
-.exam-box:hover, .exam-box:focus-visible {
+.exam-box:hover, .exam-box:focus-visible, .exam-box.active {
     box-shadow: 0 8px 32px #58a6ff33, 0 2px 12px #1a2230;
     border-color: #58a6ff;
     transform: translateY(-3px) scale(1.03);
@@ -128,4 +144,36 @@ h2 {
         min-width: 0;
         padding: 14px 8px;
     }
+}
+
+.close-btn {
+    background-color: #f6f8fa;
+    border: 1px solid #d1d5da;
+    border-radius: 6px;
+    padding: 5px 12px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #24292e;
+    cursor: pointer;
+    margin-bottom: 12px;
+    transition: background-color 0.2s ease;
+}
+
+.close-btn:hover {
+    background-color: #e1e4e8;
+}
+
+.inf03-details, .inf04-details {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transform: translateY(10px);
+    transition: max-height 1s ease, opacity 1s ease, transform 1s ease;
+}
+
+.inf03-details.show, .inf04-details.show {
+    max-height: 1000px; /* large enough to show content */
+    opacity: 1;
+    transform: translateY(0);
+    border-radius: 8px;
 }
