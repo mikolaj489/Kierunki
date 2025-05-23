@@ -142,31 +142,46 @@ function hideInitialPanelOnScroll() {
     }
 }
 
-const cursorCircle = document.createElement('div');
-cursorCircle.className = 'cursor-circle';
-cursorCircle.style.display = 'none';
-document.body.appendChild(cursorCircle);
+const links = document.querySelectorAll('.projects-content > div');
 
-document.addEventListener('mousemove', (e) => {
-    if (cursorCircle.style.display === 'block') {
-        cursorCircle.style.left = `${e.clientX}px`;
-        cursorCircle.style.top = `${e.clientY}px`;
-    }
-});
 
-document.querySelectorAll('.choice-container').forEach(el => {
-    el.addEventListener('mouseenter', () => {
-        cursorCircle.style.display = 'block';
-    });
-    el.addEventListener('mouseleave', () => {
-        cursorCircle.style.display = 'none';
-    });
-    el.addEventListener('mousemove', e => {
-        const rect = el.getBoundingClientRect();
-        el.style.setProperty('--x', `${e.clientX - rect.left}px`);
-        el.style.setProperty('--y', `${e.clientY - rect.top}px`);
+const projectUrls = [
+    "https://mikolaj489.github.io/SalonGier.github.io/",
+    "https://mikolaj489.github.io/Gra-Mikolajkowa.github.io/",
+    "https://mikolaj489.github.io/GraDydaktyczna.github.io/",
+    "https://mikolaj489.github.io/platforma.github.com/",
+    "https://mikolaj489.github.io/Obliczenia-Geometryczne.github.io/"
+];
+
+links.forEach((div, i) => {
+    div.style.cursor = "pointer";
+    div.addEventListener('click', () => {
+        if (projectUrls[i]) {
+            window.open(projectUrls[i], '_blank');
+        }
     });
 });
+document.querySelectorAll('.rating').forEach(rating => {
+    rating.addEventListener('click', e => {
+        e.stopPropagation();
+    });
+});
+
+const animateText = document.querySelectorAll('.text');
 
 
-
+setTimeout(() => {
+    animateText[0].style.display = 'block';
+    animateText[1].style.display = 'none';
+    animateText[2].style.display = 'none';
+}, 0);
+setTimeout(() => {
+    animateText[0].style.display = 'none';
+    animateText[1].style.display = 'block';
+    animateText[2].style.display = 'none';
+}, 13000);
+setTimeout(() => {
+    animateText[0].style.display = 'none';
+    animateText[1].style.display = 'none';
+    animateText[2].style.display = 'block';
+}, 130000);
