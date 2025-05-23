@@ -15,6 +15,9 @@
     --shadow-color: rgba(1, 4, 9, .4);
     --radius: 18px;
 }
+ul {
+    list-style-type:none ;
+}
 body {
     font-family: "Ubuntu Mono", monospace;
     font-weight: 400;
@@ -310,6 +313,10 @@ header span {
     transition: .3s;
     letter-spacing: .1em;
     font-weight: 600;
+}
+.projects {
+    margin: 0;
+    padding-bottom: 108px;
 }
 .projects > div {
     padding: 50px;
@@ -679,7 +686,48 @@ header span {
   transition: color 0.3s;
 }
 /* rating*/
-
+footer {
+    background-color: #000;
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    justify-content: center;
+    padding: 50px;
+}
+.bold {
+    font-weight: 900;
+}
+footer > div {
+    display: flex;
+    max-width: 679px;
+    width: 100%;
+    max-width: 1300px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+     
+}
+.footer-box {
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+}
+    /* .footer-box2 {
+        width: 100%;
+        max-width: 500px;
+    } */
+.bg2 {
+    background-image: url('../img/bg2.png');
+    background-repeat: no-repeat;
+    background-size: 89.7%;
+    height: 437px;
+    width: 1440px;
+    bottom: -47.3px;
+    left: 0;
+    position: absolute;
+    z-index: -1;
+}
 @media (max-width: 800px) {
     .choice > div {
         flex-direction: column;
