@@ -31,6 +31,7 @@ function removeCookie(name) {
 }
 // COOKIES
 const trueOrFalse = document.querySelectorAll('.initial-panel-button svg');
+console.log(trueOrFalse);
 window.addEventListener('DOMContentLoaded', () => {
 
     if (!checkbox || !initialPanelButton) {
